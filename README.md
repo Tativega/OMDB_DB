@@ -26,6 +26,16 @@ AND PER1.ID_PERSONA = PER2.ID_PERSONA;
 ```
 
 # 3. Los nombres de todas las películas, junto con la cantidad de actores que actúan en cada una, ordenadas por cantidad de actores en forma descendiente. 
+
+```sql
+SELECT PEL.TITULO, COUNT(PP.ID_PERSONA) AS CANTIDAD_ACTORES
+FROM PELICULAS PEL
+INNER JOIN PELICULAS_PERSONAS PP ON PEL.ID_PELICULA = PP.ID_PELICULA
+WHERE PP.ID_ROL = 1 OR PP.ID_ROL = 3
+GROUP BY PEL.ID_PELICULA, PEL.TITULO
+ORDER BY CANTIDAD_ACTORES DESC;
+```
+
 # 4. Los nombres de las películas que no tengan ningún actor.
 
 ```sql
