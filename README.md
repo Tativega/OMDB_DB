@@ -53,6 +53,13 @@ WHERE YEAR(FECHA_ESTRENO) < 2000;
 ```
 
 # 7. El nombre de las películas que hayan ganado un oscar y su idioma original no sea el inglés.
+
+```sql
+SELECT PEL.TITULO FROM PELICULAS PEL
+INNER JOIN PELICULAS_PREMIOS PP ON PEL.ID_PELICULA = PP.ID_PELICULA
+WHERE PP.ID_PREMIO = 1 AND PEL.ID_IDIOMA_ORIGINAL <> '1';
+```
+
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
 # 10. La cantidad de películas agrupadas por género. Animación, Aventura, Terror, etc. 
