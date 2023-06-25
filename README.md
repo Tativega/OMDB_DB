@@ -14,6 +14,7 @@ ORDER BY (CASE WHEN P.PARENT_ID IS NULL THEN P.ID_PELICULA ELSE P.PARENT_ID END)
 
 # 2. Los nombres de las películas en donde su director también sea el actor principal.
 
+```sql
 SELECT PEL.TITULO
 FROM PELICULAS AS PEL
 INNER JOIN PELICULAS_PERSONAS PP1 ON PEL.ID_PELICULA = PP1.ID_PELICULA
@@ -22,6 +23,7 @@ INNER JOIN PERSONAS PER1 ON PP1.ID_PERSONA = PER1.ID_PERSONA
 INNER JOIN PERSONAS PER2 ON PP2.ID_PERSONA = PER2.ID_PERSONA
 WHERE PP1.ID_ROL = 2 AND PP2.ID_ROL = 1
 AND PER1.ID_PERSONA = PER2.ID_PERSONA;
+```
 
 # 3. Los nombres de todas las películas, junto con la cantidad de actores que actúan en cada una, ordenadas por cantidad de actores en forma descendiente. 
 # 4. Los nombres de las películas que no tengan ningún actor.
