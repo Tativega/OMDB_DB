@@ -46,6 +46,12 @@ GROUP BY PER.NOMBRE, PER.APELLIDO
 HAVING COUNT(DISTINCT PP.ID_PELICULA) > 1;
 ```
 # 6. La duración promedio (en minutos) de las películas estrenadas antes del año 2000.
+
+```sql
+SELECT AVG(DURACION) FROM PELICULAS
+WHERE YEAR(FECHA_ESTRENO) < 2000;
+```
+
 # 7. El nombre de las películas que hayan ganado un oscar y su idioma original no sea el inglés.
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
