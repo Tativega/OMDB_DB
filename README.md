@@ -27,6 +27,15 @@ AND PER1.ID_PERSONA = PER2.ID_PERSONA;
 
 # 3. Los nombres de todas las películas, junto con la cantidad de actores que actúan en cada una, ordenadas por cantidad de actores en forma descendiente. 
 # 4. Los nombres de las películas que no tengan ningún actor.
+
+```sql
+SELECT PEL.TITULO FROM PELICULAS AS PEL
+INNER JOIN PELICULAS_GENEROS PG ON PEL.ID_PELICULA = PG.ID_PELICULA
+INNER JOIN GENEROS G ON PG.ID_GENERO = G.ID_GENERO
+WHERE G.ID_GENERO = 6;
+
+```
+
 # 5. Los nombres de los actores que actúan en más de una película de la base de datos.
 # 6. La duración promedio (en minutos) de las películas estrenadas antes del año 2000.
 # 7. El nombre de las películas que hayan ganado un oscar y su idioma original no sea el inglés.
