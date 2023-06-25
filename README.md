@@ -37,6 +37,14 @@ WHERE G.ID_GENERO = 6;
 ```
 
 # 5. Los nombres de los actores que actúan en más de una película de la base de datos.
+
+```sql
+SELECT CONCAT(PER.NOMBRE, ' ', PER.APELLIDO) AS ACTORES FROM PERSONAS PER
+INNER JOIN PELICULAS_PERSONAS PP ON PER.ID_PERSONA = PP.ID_PERSONA
+WHERE PP.ID_ROL = 1 OR PP.ID_ROL = 3
+GROUP BY PER.NOMBRE, PER.APELLIDO
+HAVING COUNT (DISTINCT PP.ID_PELICULA) > 1;
+```
 # 6. La duración promedio (en minutos) de las películas estrenadas antes del año 2000.
 # 7. El nombre de las películas que hayan ganado un oscar y su idioma original no sea el inglés.
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
