@@ -63,3 +63,10 @@ WHERE PP.ID_PREMIO = 1 AND PEL.ID_IDIOMA_ORIGINAL <> '1';
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
 # 10. La cantidad de películas agrupadas por género. Animación, Aventura, Terror, etc. 
+
+```sql
+ SELECT G.NOMBRE AS GENERO, COUNT(PG.ID_PELICULA) AS CANTIDAD_PELICULAS
+ FROM GENEROS G
+ INNER JOIN PELICULAS_GENEROS AS PG ON G.ID_GENERO = PG.ID_GENERO
+ GROUP BY G.ID_GENERO;
+```
