@@ -76,6 +76,19 @@ WHERE PP.ID_PREMIO = 1 AND PEL.ID_IDIOMA_ORIGINAL <> '1';
 
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
 
+```sql
+SELECT DISTINCT PEL.titulo FROM PELICULAS PEL
+INNER JOIN PELICULAS_PERSONAS PP ON PEL.id_pelicula = PP.id_pelicula
+INNER JOIN PERSONAS PA ON PP.id_persona = PA.id_persona
+WHERE PP.ID_PERSONA IN
+    (SELECT DISTINCT PA2.ID_PERSONA 
+    FROM PELICULAS_PERSONAS PP2
+    INNER JOIN PERSONAS PA2 ON PP2.id_persona = PA2.id_persona
+    INNER JOIN PELICULAS P2 ON PP2.id_pelicula = P2.id_pelicula
+    WHERE P2.titulo LIKE '%STAR WARS%' AND PP2.ID_ROL IN (1, 3))
+AND PEL.TITULO NOT LIKE '%STAR WARS%');
+    ```
+
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
 
 ```sql
