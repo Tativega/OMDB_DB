@@ -4,12 +4,13 @@
 # 1. Los nombres de las películas junto con su director, que tenga más de una parte. Ordenadas por orden en que deben ser vistas. Ejemplo volver al futuro tiene 3 partes.
 
 ```sql
-SELECT *
-FROM PELICULAS AS P
-WHERE P.PARENT_ID IS NOT NULL OR P.ID_PELICULA IN (
-    SELECT PARENT_ID FROM PELICULAS WHERE PARENT_ID IS NOT NULL
-)
-ORDER BY (CASE WHEN P.PARENT_ID IS NULL THEN P.ID_PELICULA ELSE P.PARENT_ID END), ORDEN_VISUALIZACION;
+SELECT P.TITULO, PL.NOMBRE, PL.APELLIDO
+FROM peliculas AS P
+INNER JOIN peliculas_personas AS PP ON P.ID_PELICULA = PP.ID_PELICULA
+INNER JOIN personas AS PL ON PP.ID_PERSONA = PL.ID_PERSONA
+WHERE (P.PARENT_ID IS NOT NULL OR P.ID_PELICULA IN (SELECT PARENT_ID FROM peliculas)) 
+AND PP.ID_ROL = 2
+ORDER BY P.TITULO, P.ORDEN_VISUALIZACION;
 ```
 
 # 2. Los nombres de las películas en donde su director también sea el actor principal.
