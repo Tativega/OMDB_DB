@@ -86,7 +86,7 @@ WHERE PP.ID_PERSONA IN
     INNER JOIN PERSONAS PA2 ON PP2.id_persona = PA2.id_persona
     INNER JOIN PELICULAS P2 ON PP2.id_pelicula = P2.id_pelicula
     WHERE P2.titulo LIKE '%STAR WARS%' AND PP2.ID_ROL IN (1, 3))
-AND PEL.TITULO NOT LIKE '%STAR WARS%');
+AND PEL.TITULO NOT LIKE '%STAR WARS%';
 ```
 
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
