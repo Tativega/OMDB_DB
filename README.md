@@ -76,6 +76,16 @@ WHERE PP.ID_PREMIO = 1 AND PEL.ID_IDIOMA_ORIGINAL <> '1';
 
 # 8. El nombre alguna película (Que no sea Star Wars) en donde haya participado algún actor de la película Star Wars (11)
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
+
+```sql
+SELECT P.TITULO "Titulo original", P.DURACION, PT.TITULO_TRADUCIDO "Titulo traducido", I.NOMBRE "Idioma traduccion"
+FROM peliculas AS P
+INNER JOIN peliculas_traducciones AS PT ON P.ID_PELICULA = PT.ID_PELICULA
+INNER JOIN idiomas AS I ON PT.ID_IDIOMA = I.ID_IDIOMA
+WHERE P.TITULO = PT.TITULO_TRADUCIDO
+ORDER BY P.ID_PELICULA;
+```
+
 # 10. La cantidad de películas agrupadas por género. Animación, Aventura, Terror, etc. 
 
 ```sql
