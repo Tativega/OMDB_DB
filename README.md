@@ -92,7 +92,7 @@ AND PEL.TITULO NOT LIKE '%STAR WARS%';
 # 9. El listado de películas con su tiempo de duración donde su nombre en castellano sea igual a su nombre original en el idioma en que fue creada.
 
 ```sql
-SELECT PEL.TITULO "Titulo original", PEL.DURACION, PT.TITULO_TRADUCIDO "Titulo traducido", I.NOMBRE "Idioma traduccion"
+SELECT PEL.TITULO, PEL.DURACION
 FROM PELICULAS AS PEL
 INNER JOIN PELICULAS_TRADUCCIONES AS PT ON PEL.ID_PELICULA = PT.ID_PELICULA
 INNER JOIN IDIOMAS AS I ON PT.ID_IDIOMA = I.ID_IDIOMA
