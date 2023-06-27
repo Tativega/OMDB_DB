@@ -363,7 +363,6 @@ INSERT INTO PERSONAS (ID_PERSONA, NOMBRE, APELLIDO, SEXO, FECHA_NAC, ID_PAIS_NAC
 (80, 'OWEN', 'WILSON', 'M', '1968-11-18', 1),
 (81, 'ANTHONY', 'GONZALEZ', 'M', '2004-09-23', 1);
 
-
 INSERT INTO PELICULAS_GENEROS (ID_PELICULA, ID_GENERO) VALUES
 (1, 1), (1, 2),
 (2, 4), (2, 9), (2, 5),
@@ -455,6 +454,46 @@ INSERT INTO PELICULAS_PERSONAS (ID_PELICULA, ID_PERSONA, ID_ROL) VALUES
 (37, 57, 2), (37, 81, 10),
 (38, 62, 2), (38, 63, 1), (38, 64, 3), (38, 67, 1), (38, 65, 1), (38, 66, 1);
 
+INSERT INTO PELICULAS_TRADUCCIONES (ID_PELICULA, ID_IDIOMA, TITULO_TRADUCIDO) VALUES
+(1, 4, "Titanic"), (1, 2, "Titanic"),
+(2, 2, 'Star Wars Episodio I: La amenaza fantasma'), 
+(3, 2, 'Star Wars Episodio II: El ataque de los clones'), 
+(4, 2, 'Star Wars Episodio III: La venganza de los Sith'), 
+(5, 2, 'Star Wars Episodio IV: Una nueva esperanza'), 
+(6, 2, 'Star Wars Episodio V: El imperio contraataca'), 
+(7, 2, 'Star Wars Episodio VI: El retorno del Jedi'), 
+(8, 2, 'Star Wars Episodio VII: El despertar de la Fuerza'), 
+(9, 2, 'Star Wars Episodio VIII: Los últimos Jedi'), 
+(10, 2, 'Star Wars Episodio IX: El ascenso de Skywalker'), 
+(11, 2, 'El viaje de Chihiro'), 
+(12, 2, 'Intensa-Mente'), 
+(13, 2, 'Corazón valiente'), 
+(14, 2, 'Volver al futuro'), 
+(15, 2, 'Volver al futuro II'), 
+(16, 2, 'Volver al futuro III'), 
+(17, 2, 'Forrest Gump'), 
+(18, 2, '¿Quién engañó a Roger Rabbit?'), 
+(19, 2, 'Indiana Jones y el templo de la perdición'), 
+(20, 2, 'Indiana Jones y los cazadores del arca perdida'), 
+(21, 2, 'Indiana Jones y la última cruzada'), 
+(22, 2, 'Indiana Jones y el reino de la calavera de cristal'), 
+(23, 2, 'Indiana Jones y el dial del destino'), 
+(24, 2, 'Jumanji'), 
+(25, 2, 'Piratas del Caribe: La maldición del Perla Negra'), 
+(26, 2, 'Piratas del Caribe: El cofre de la muerte'), 
+(27, 2, 'Piratas del Caribe: En el fin del mundo'), 
+(28, 2, 'Piratas del Caribe: Navegando aguas misteriosas'), 
+(29, 2, 'Piratas del Caribe: La venganza de Salazar'), 
+(30, 2, 'Toy Story'), 
+(31, 2, 'Toy Story 2'), 
+(32, 2, 'Toy Story 3'), 
+(33, 2, 'Toy Story 4'), 
+(34, 2, 'Cars: Rápidos como el Rayo'), 
+(35, 2, 'Cars 2'), 
+(36, 2, 'Cars 3'), 
+(37, 2, 'Coco'), 
+(38, 1, 'Secret in their ayes');
+
 INSERT INTO PELICULAS_PRODUCTORAS (ID_PELICULA, ID_PRODUCTORA) VALUES
 (1, 2), (1, 3),
 (2, 3), (2, 7),
@@ -493,4 +532,4 @@ INSERT INTO PELICULAS_PRODUCTORAS (ID_PELICULA, ID_PRODUCTORA) VALUES
 (35, 1), (35, 11),
 (36, 1), (36, 11),
 (37, 1), (37, 11),
-(38, 17), (38, 18),
+(38, 17), (38, 18);
