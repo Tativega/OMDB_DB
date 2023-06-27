@@ -532,7 +532,7 @@ INSERT INTO PELICULAS_TRADUCCIONES (ID_PELICULA, ID_IDIOMA, TITULO_TRADUCIDO) VA
 (31, 2, 'Toy Story 2'), 
 (32, 2, 'Toy Story 3'), 
 (33, 2, 'Toy Story 4'), 
-(34, 2, 'Cars: Rápidos como el Rayo'), 
+(34, 2, 'Cars'), 
 (35, 2, 'Cars 2'), 
 (36, 2, 'Cars 3'), 
 (37, 2, 'Coco'), 
