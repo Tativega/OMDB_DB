@@ -1,4 +1,4 @@
-# OMDB_DB
+# OMDB_DB - Trabajo final para bases de datos realizado con MySQL basado en el sitio https://www.omdb.org/
 
 
 # 1. Los nombres de las películas junto con su director, que tenga más de una parte. Ordenadas por orden en que deben ser vistas. Ejemplo volver al futuro tiene 3 partes.
